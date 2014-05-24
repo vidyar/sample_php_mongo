@@ -1,0 +1,13 @@
+{
+    "name": "sample_php_mongo",
+    "description": "Sample project using PHP and MongoDB.",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        " xdebug": "2.1.3"
+    }
+}
+

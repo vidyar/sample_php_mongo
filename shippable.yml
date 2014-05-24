@@ -1,0 +1,17 @@
+language: php
+
+php: 
+  - 5.4
+services:
+  - mongodb
+before_script: 
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+  - tar -xzf mongo-1.5.2.tgz
+  - sh -c "cd mongo-1.5.2/mongo-1.5.2 && phpize && ./configure && make install"
+  - echo "extension=mongo.so" >> '/home/minion/.phpenv/versions/5.4.9/etc/php.ini'
+script:
+  - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ConnectToMongoTest.php
+  
+notifications:
+   email: false
