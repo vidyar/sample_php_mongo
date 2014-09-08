@@ -2,7 +2,14 @@ language: php
 
 php: 
   - 5.4
-
+env:
+ global:
+  - secure: RiZLQwe3cB4HW55x375R//tJGnUwLISDGxDhIWxC0GXsC0LofOv22NSFtLWntVWv6+Ph9qfWKOriuBF7p6TlWoTYEvtdrImlin/EZlEmAhhdoa2hjCy4WSBUFYxHXHnbHzExOPkQxMGeAVZ45RuRnDqH9c8dDc4cDfQe9BBzH9lF+CU0eEmEG5iq6DwzUZWiBxVK7xeXNtr0kelvX3b8fNV8Fh1dOLyOuO2LOM7y7335z6YuEUkymQQLVBKcVsodx28I9hGLdFnC/3GJbszW0MQl/zOVWpaiWEp9JCF57jVh3yUDFvhs/hesWvDwszPRM7S/RkDrw3kWourzUVdnbA==
+  #- secure: FLbageDCU+rVVZ/VnDPxDBzSzgIY8TLQAqZ9UXj4mEIq1PKFTg3qkOB69PjikMPRQgRIGsIEBM3bPgCYUJIHZESc4J2gA9OCftJUDIekCwAveIBOu7XJF7pmovKXv7Qv3JkZu+ThGbLLDCT8lXoBV2qepnQ4S6rvwuqvC/wMBKV8gvR1y7Jt1Rl6IEVN6yJ5ZpQVCmjBk5FFNEsubodnyAdcflUnGB5Lw8xN17zjerbgQ7Hc6O+jowNqpjp4OBEHP87VbV+43xsBO2pmawn7UFA59fdGnmpMbsPNra2/kgmGUhlMWUEEx4rREjJsNRced/zbsJ2pdoK1DeikEELmyA==
+  - foo=bar
+ matrix:
+  -  secure: OmlTUgG8DLQ/71EbAGM9D7yUYuye1Ys5oBCvcRUXCmkyC3jqA0lNwG2eF14r98sXD1PE8V4oX/9LPmvufsoQB7186JJSa386HVSnM36wlTyQbj4BNjVIWkKjkkSHJhHGffndUJbfGYd8nhi/4gVH3IGop/AnxG5tuMrB7tLN/pZUB62MJVF4W4lyVi0FdCVihJ1dPxcNLVNA0Bf8bJ2S+Jm8heOtSdG6iojQEZA5CohEbNAWtxDTtouG0wW4rJ9iLefk2NIoAJ+doQuH+XskekYgdGWpJop543LK/41FmabculZfp6ZU0Ib45B1MFKiea4u67K+XMzAjlwgTz/WdMQ==
+  
 services:
   - mongodb
 before_script: 
@@ -10,9 +17,10 @@ before_script:
   - mkdir -p shippable/codecoverage
   - tar -xzf mongo-1.5.2.tgz
   - sh -c "cd mongo-1.5.2/mongo-1.5.2 && phpize && ./configure && make install"
-  - echo "extension=mongo.so" >> '/home/minion/.phpenv/versions/5.4.9/etc/php.ini'
+  - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini'
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ConnectToMongoTest.php
-  
+  - echo $enter and  $project
+  - echo $username
 notifications:
    email: false
