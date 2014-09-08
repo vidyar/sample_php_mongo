@@ -17,13 +17,15 @@ before_script:
   - mkdir -p shippable/codecoverage
   #- tar -xzf mongo-1.5.2.tgz
   #- sh -c "cd mongo-1.5.2/mongo-1.5.2 && phpize && ./configure && make install"
-  - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini'
+  - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+ # - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini'
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ConnectToMongoTest.php
-  - echo $enter and  $project
+  - echo $enter and  $project- 
   - echo $username
 notifications:
    email: false
+   
 matrix:
   include:
     - php: 5.5
