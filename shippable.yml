@@ -4,7 +4,7 @@ php:
   - 5.4
 env:
  global:
-   - secure: aYIwB5he8wK/lyfhgbpyfvb/0CgXx5rcyhdu13BPGfpdXqMLWhcnSJTh0jsjatV+9zhoKn1ebnXWdDIw/fUssACwfXVfulL8WnJ5S1Eiu4CWyaAWyw6MpbTpXoImqtAYydd6kcX+bR01sgcDmSWamXMyPPBvSovQekbh7ppnuWzOhLTkQOsSw+vbf6vPmwW9sshIpbHvxTa0g0jZexLHa2P9abnK6DJHmS9JKzYeqvKlaCpvogSS0Fcq7uSUa9r1betoQgKdkUgNHGEMhxvG69lp2rpwJpeUVZsbBb2IgmRF1FsJ15yfMP5HUfSNt2tldaE2YJ2CWy3N2qAHnh7PRw==
+  - secure: aYIwB5he8wK/lyfhgbpyfvb/0CgXx5rcyhdu13BPGfpdXqMLWhcnSJTh0jsjatV+9zhoKn1ebnXWdDIw/fUssACwfXVfulL8WnJ5S1Eiu4CWyaAWyw6MpbTpXoImqtAYydd6kcX+bR01sgcDmSWamXMyPPBvSovQekbh7ppnuWzOhLTkQOsSw+vbf6vPmwW9sshIpbHvxTa0g0jZexLHa2P9abnK6DJHmS9JKzYeqvKlaCpvogSS0Fcq7uSUa9r1betoQgKdkUgNHGEMhxvG69lp2rpwJpeUVZsbBb2IgmRF1FsJ15yfMP5HUfSNt2tldaE2YJ2CWy3N2qAHnh7PRw==
   - foo=bar
  matrix:
   -  secure: OmlTUgG8DLQ/71EbAGM9D7yUYuye1Ys5oBCvcRUXCmkyC3jqA0lNwG2eF14r98sXD1PE8V4oX/9LPmvufsoQB7186JJSa386HVSnM36wlTyQbj4BNjVIWkKjkkSHJhHGffndUJbfGYd8nhi/4gVH3IGop/AnxG5tuMrB7tLN/pZUB62MJVF4W4lyVi0FdCVihJ1dPxcNLVNA0Bf8bJ2S+Jm8heOtSdG6iojQEZA5CohEbNAWtxDTtouG0wW4rJ9iLefk2NIoAJ+doQuH+XskekYgdGWpJop543LK/41FmabculZfp6ZU0Ib45B1MFKiea4u67K+XMzAjlwgTz/WdMQ==
@@ -20,7 +20,7 @@ before_script:
  # - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini'
 script:
   - phpunit  --log-junit shippable/testresults/junit.xml --coverage-xml shippable/codecoverage tests/ConnectToMongoTest.php
-  - echo $vidya and  $var 
+  - echo $vidya and $var 
   - echo $username
 notifications:
    email: false
