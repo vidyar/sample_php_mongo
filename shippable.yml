@@ -30,3 +30,4 @@ matrix:
   include:
     - php: 5.5
 commit_container: vidyar/phpmongo
+cache: true
