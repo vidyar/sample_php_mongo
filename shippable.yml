@@ -1,5 +1,5 @@
 language: php
-
+build_image: shippable/minv2
 php: 
   - 5.4
 env:
@@ -29,5 +29,6 @@ notifications:
 matrix:
   include:
     - php: 5.5
+
 commit_container: vidyar/phpmongo
-cache: true
+#cache: true
