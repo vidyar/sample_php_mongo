@@ -1,5 +1,7 @@
 language: php
+
 build_image: shippable/minv2
+
 php: 
   - 5.4
 env:
@@ -13,6 +15,7 @@ env:
   
 services:
   - mongodb
+
 before_script: 
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
