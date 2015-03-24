@@ -4,6 +4,9 @@ build_image: shippable/minv2
 
 php: 
   - 5.4
+  - 5.5
+  - 5.6
+  
 env:
  global:
   - secure: aYIwB5he8wK/lyfhgbpyfvb/0CgXx5rcyhdu13BPGfpdXqMLWhcnSJTh0jsjatV+9zhoKn1ebnXWdDIw/fUssACwfXVfulL8WnJ5S1Eiu4CWyaAWyw6MpbTpXoImqtAYydd6kcX+bR01sgcDmSWamXMyPPBvSovQekbh7ppnuWzOhLTkQOsSw+vbf6vPmwW9sshIpbHvxTa0g0jZexLHa2P9abnK6DJHmS9JKzYeqvKlaCpvogSS0Fcq7uSUa9r1betoQgKdkUgNHGEMhxvG69lp2rpwJpeUVZsbBb2IgmRF1FsJ15yfMP5HUfSNt2tldaE2YJ2CWy3N2qAHnh7PRw==
